@@ -30,4 +30,14 @@ def print_history(history):
         return
     table=Table(title="Conversion History")
     table.add_column("Input",justify="right")
+    table.add_column("Converted",justify="right")
+    table.add_column("Type",justify="right")
     
+    for entry in history :
+        table.add_row(entry["input"],entry["converted"],entry["type"])
+        console.print(table)
+def main():
+    history = []
+
+    while True:
+        console.print("\n [bold green]Unit Converter[/bold green]")
